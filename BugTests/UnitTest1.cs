@@ -6,6 +6,7 @@ using static Bug;
 public class UnitTest1
 {
     [TestMethod]
+	[ExpectedException(typeof(InvalidOperationException))]
     public void TestDeferClosed()
     {
         var bug = new Bug(Bug.State.Defered);
@@ -31,6 +32,7 @@ public class UnitTest1
         Assert.AreEqual(Bug.State.Assigned, state);
     }
     [TestMethod]
+	[ExpectedException(typeof(InvalidOperationException))]
     public void TestOpenClosed()
     {
         var bug = new Bug(Bug.State.Open);
@@ -49,6 +51,7 @@ public class UnitTest1
     }
 
     [TestMethod]
+	[ExpectedException(typeof(InvalidOperationException))]
     public void TestOpenDefered()
     {
         var bug = new Bug(Bug.State.Open);
@@ -83,6 +86,7 @@ public class UnitTest1
     }
 
     [TestMethod]
+	[ExpectedException(typeof(InvalidOperationException))]
     public void TestClosedDefered()
     {
         var bug = new Bug(Bug.State.Closed);
@@ -101,6 +105,7 @@ public class UnitTest1
     }
 
     [TestMethod]
+	[ExpectedException(typeof(InvalidOperationException))]
     public void TestClosedClosed()
     {
         var bug = new Bug(Bug.State.Closed);
